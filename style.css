@@ -1,0 +1,169 @@
+/* Apply box-sizing and font settings globally */
+:root {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+	/* Light Theme Colors */
+	--primary-bg-light: #ffffff; /* Light background for the body */
+	--secondary-bg-light: #f5f5f5; /* Slightly darker background for containers */
+	--primary-text-light: #000000; /* Dark color for primary text */
+	--secondary-text-light: #333333; /* Darker color for secondary text */
+	--input-bg-light: #ffffff; /* Background color for input fields */
+	--input-border-light: #cccccc; /* Border color for input fields */
+	--input-text-light: #000000; /* Text color inside input fields */
+
+	/* Dark Theme Colors */
+	--primary-bg-dark: #1c1c1c; /* Dark background for the body */
+	--secondary-bg-dark: #2a2a2a; /* Slightly lighter background for containers */
+	--primary-text-dark: #f5f5f5; /* Light color for primary text */
+	--secondary-text-dark: #cccccc; /* Light color for secondary text */
+	--input-bg-dark: #333333; /* Background color for input fields */
+	--input-border-dark: #444444; /* Border color for input fields */
+	--input-text-dark: #ffffff; /* Text color inside input fields */
+}
+
+/* Set width for HTML and body elements to control the popup size */
+html,
+body {
+	width: 700px;
+	padding: 0;
+	margin: 0;
+}
+
+/* General styling for the popup */
+body {
+	background-color: var(--primary-bg-light); /* Default to light theme */
+	color: var(--primary-text-light);
+	padding: 10px; /* Add some padding to the body */
+}
+
+/* Container for the popup content */
+.popup-container {
+	padding: 20px;
+	background-color: var(--secondary-bg-light);
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Style for labels */
+.popup-container label {
+	font-weight: bold;
+	display: block;
+	margin-bottom: 5px;
+	font-size: 14px;
+	color: var(--primary-text-light);
+}
+
+/* Style for input fields */
+.input {
+	width: 100px; /* Maintain original width of input fields */
+	padding: 8px;
+	margin-bottom: 15px;
+	background-color: var(--input-bg-light);
+	border: 1px solid var(--input-border-light);
+	border-radius: 4px;
+	font-size: 14px;
+	color: var(--input-text-light);
+}
+
+/* Style for select dropdowns */
+.popup-container select {
+	width: 48%; /* Adjust to fit two dropdowns side by side */
+	padding: 8px;
+	margin-bottom: 15px;
+	background-color: var(--input-bg-light);
+	border: 1px solid var(--input-border-light);
+	border-radius: 4px;
+	font-size: 14px;
+	color: var(--input-text-light);
+	box-sizing: border-box;
+}
+
+/* Additional styling for currency dropdowns */
+.popup-container label[for='Cfrom'],
+.popup-container label[for='Cto'] {
+	display: inline-block;
+	width: auto;
+	font-size: 14px;
+	color: var(--primary-text-light);
+}
+
+#Cfrom,
+#Cto {
+	display: inline-block;
+	margin-right: 4%; /* Small space between the two dropdowns */
+}
+
+/* General styling for buttons */
+.btn {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 14px;
+	font-weight: bold;
+	color: var(--primary-text-light);
+	background-color: #007bff; /* Primary button background color */
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+	text-align: center;
+	text-decoration: none;
+}
+
+/* Hover state for buttons */
+.btn:hover {
+	background-color: #0056b3; /* Darker shade for hover */
+}
+
+/* Focus state for buttons */
+.btn:focus {
+	outline: 2px solid #0056b3; /* Outline color for accessibility */
+	outline-offset: 2px;
+}
+
+/* Disabled state for buttons */
+.btn:disabled {
+	background-color: #6c757d; /* Gray background for disabled button */
+	color: #ffffff; /* Light text color for disabled button */
+	cursor: not-allowed;
+	box-shadow: none;
+}
+
+/* Add shadow effect on active button press */
+.btn:active {
+	background-color: #004a8c; /* Even darker shade for active state */
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Inset shadow for pressed effect */
+}
+
+/* Apply dark theme styles */
+body.dark-theme {
+	background-color: var(--primary-bg-dark);
+	color: var(--primary-text-dark);
+}
+
+body.dark-theme .popup-container {
+	background-color: var(--secondary-bg-dark);
+}
+
+body.dark-theme .input {
+	background-color: var(--input-bg-dark);
+	border: 1px solid var(--input-border-dark);
+	color: var(--input-text-dark);
+}
+
+body.dark-theme select {
+	background-color: var(--input-bg-dark);
+	border: 1px solid var(--input-border-dark);
+	color: var(--input-text-dark);
+}
+
+body.dark-theme .btn {
+	background-color: #007bff;
+	color: var(--primary-text-dark);
+}
+
+body.dark-theme .btn:hover {
+	background-color: #0056b3;
+}
