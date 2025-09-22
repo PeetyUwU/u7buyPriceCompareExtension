@@ -20,11 +20,15 @@ function topUp() {
 	 * @type {TopUpObj[]}
 	 */
 	const array = [];
-	const lis = document.querySelectorAll('li.product-item');
+	/**
+	 * @type {HTMLElement[]}
+	 **/
+	const lis = document.querySelectorAll(`.el-radio.u7-radio-coins`);
 	lis.forEach((li) => {
-		let dia = li.getElementsByClassName('product-item-name')[0].innerHTML;
-		let price =
-			li.getElementsByClassName('product-item-price')[0].innerHTML;
+		let dia = li.querySelector('.face-value strong').innerHTML;
+		let price = li.querySelector(
+			'.price-wrapper .price .price-text span'
+		).innerHTML;
 
 		dia = dia.split(' ')[0];
 		price = price.split(' ')[0];
